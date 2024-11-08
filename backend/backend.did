@@ -1,0 +1,13 @@
+type Post = 
+ record {
+   content: text;
+   id: nat;
+   timestamp: int;
+   title: text;
+ };
+service : {
+  createPost: (text, text) -> (Post);
+  deletePost: (nat) -> (bool);
+  getAllPosts: () -> (vec Post) query;
+  getPost: (nat) -> (opt Post) query;
+}
